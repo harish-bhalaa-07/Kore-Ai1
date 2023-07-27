@@ -8,7 +8,7 @@ model=pickle.load(open('modelamount.pkl','rb'))
 
 @app.route('/')
 def home():
-    return render_template('index1.html')  #html page here
+    return render_template('index.html')  #html page here
 
 
 @app.route('/predict',methods=['POST'])
@@ -21,7 +21,7 @@ def predict():
     
     output=prediction
     
-    return render_template('index1.html',prediction_text='Loan amoun tis {}'.format(output))
+    return render_template('index.html',prediction_text='Loan amoun tis {}'.format(output))
 
 
 
