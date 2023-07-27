@@ -18,10 +18,12 @@ def predict():
     print(int_features)
     final_features=np.array(int_features)  
     prediction=model.predict(final_features)
-    
-    output=prediction
-    
-    return render_template('index.html',prediction_text='Loan amoun tis {}'.format(output))
+    prediction = str(prediction[0])
+    print(prediction)
+    data = {
+            "prediction" : prediction
+        }
+    return jsonify(data)
 
 
 
